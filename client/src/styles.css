@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+#nav-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+#nav-text:hover {
+    color: rgba(243, 13, 13, 0.759);
+}
+
+#nav-text-d {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}
+
+#nav-text-d:hover {
+    color: rgba(243, 13, 13, 0.759);
+}
+
+#nav-brand {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form {
+    width: 55%;
+    height: 50%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 3%;
+    box-shadow: 7px 7px 7px rgb(244, 244, 248);
+}
+
+#signup-form {
+    height: 44%;
+    width: 60%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 3%;
+    box-shadow: 7px 7px 7px rgb(244, 244, 248);
+}
+
+#form-label {
+    font-size: 25px;
+    margin-bottom: 16px;
+}
+
+#form-font {
+    font-family: 'Raleway', sans-serif;
+}

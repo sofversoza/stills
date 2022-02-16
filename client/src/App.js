@@ -1,33 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+import Home from './components/Home';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 function App() {
-
-  useEffect(() => {
-    fetch('/users')
-    .then(res => res.json())
-    .then(console.log)
-  }, [])
-
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     {/* <Home /> */}
+     <Login />
+     {/* <Signup /> */}
+
+      <div className="App">
+        {/* <h1>Hi</h1>
+        <Button>Test Button</Button> */}
+      </div>
+    </>
   );
 }
 

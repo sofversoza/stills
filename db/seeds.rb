@@ -12,4 +12,5 @@ m1 = Movie.create!(title: 'The Shining', director: 'Kubrick', duration: 120, rel
 r1 = Review.create!(rating: 4.5, comment: 'Wow this was awesome!!!!!', user_id: u1.id, movie_id: m1.id)
 r2 = Review.create!(rating: 4, comment: 'Kubrick is CRAZY', user_id: u2.id, movie_id: m1.id)
 
+
 puts 'Done seeding!!!!!!!!!!'
