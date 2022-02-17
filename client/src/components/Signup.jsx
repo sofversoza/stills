@@ -3,12 +3,17 @@ import '../styles.css'
 import { Button, Form, Container, Row, Col } from 'react-bootstrap'
 
 
-function Signup() {
+function Signup({ setMember, setUser }) {
   const [fullname, setFullname] = useState("")
   const [email,setEmail] = useState("") 
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [user, setUser]= useState(null)
+  
+
+
+  function handleMember(){
+    setMember(true)
+  }
 
 
   function handleSubmit(e) {
@@ -19,14 +24,15 @@ function Signup() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullname,
+        full_name: fullname,
         email,
         password,
         password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => setUser(user)
+        );
       }
     });
   }
@@ -83,6 +89,7 @@ function Signup() {
           <Button variant='primary' type="submit" className="mt-2">
             Sign up
           </Button>
+          <Button onClick= {handleMember}>I'm a member</Button>
         </Form>
       </Container>
     </div>

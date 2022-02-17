@@ -1,5 +1,14 @@
+
 body {
     background-color: rgb(241, 241, 241);
+}
+
+.header-container {
+    padding: 2%;
+    background-color: rgb(43, 0, 0);
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: white;
 }
 
 #nav-text {
@@ -11,7 +20,7 @@ body {
 }
 
 #nav-text:hover {
-    color: rgba(243, 13, 13, 0.759);
+    color: rgb(121, 20, 20);
 }
 
 #nav-text-d {
@@ -20,7 +29,7 @@ body {
 }
 
 #nav-text-d:hover {
-    color: rgba(243, 13, 13, 0.759);
+    color: rgb(139, 25, 25);
 }
 
 #nav-brand {
@@ -62,8 +71,3 @@ body {
 #form-font {
     font-family: 'Raleway', sans-serif;
 }
-
-
-
-
-
