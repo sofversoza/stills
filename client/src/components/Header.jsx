@@ -1,14 +1,19 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import '../styles.css'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
-function Header({ user, setUser }) {
+function Header({ user, setUser,setMood }) {
+  let navigate = useNavigate();
 
     function handleLogout() {
+      navigate("/")
         fetch("/logout", { method: "DELETE" }).then((r) => {
           if (r.ok) {
             setUser(null);
+            setMood([])
+          
           }
         });
       }

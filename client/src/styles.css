@@ -38,8 +38,9 @@ body {
     padding-left: 15px;
 }
 
-.container {
+.container-login {
     height: 100vh;
+    width: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,4 +71,39 @@ body {
 
 #form-font {
     font-family: 'Raleway', sans-serif;
+}
+
+.movie-grid {
+    padding-top: 15px;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+#main-div-movie {
+    font-family: 'Raleway', sans-serif;
+}
+
+#single-movie-div {
+    height: 50%; 
+    width: 50%;
+}
+
+#container-movie-info {
+    width: 120vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 30px;
+}
+
+#single-movie-info {
+    background-color: rgb(235, 235, 228);
+    padding: 25px;
+    border-radius: 7px;
+}
+
+#img-div {
+    height: 100%;
+    width: 100%;
+    object-fit: center;
 }
