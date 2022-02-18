@@ -2,6 +2,10 @@ class FavoritesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable
     rescue_from ActiveRecord::RecordNotFound, with: :render_error
 
+    def index
+        render json: Favorite.all, status: :ok
+    end
+
     def create
         fav = Favorite.create!(user_id: params[:user_id], movie_id: params[:movie_id])
         render json: fav, status: :created

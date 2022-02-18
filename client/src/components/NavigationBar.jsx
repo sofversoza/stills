@@ -8,11 +8,13 @@ import UserSettings from './UserSettings'
 import Home from './Home'
 import Header from './Header'
 
-function NavigationBar({ user, setUser }) {
+
+function NavigationBar({ user, setUser, setMood}) {
+  
   
   return (
     <div>
-      <Header user={user} setUser={setUser}/>
+      <Header user={user} setUser={setUser} setMood={setMood}/>
     <div>
      <div>
       <Navbar bg='black' variant='dark' expand='sm' collapseOnSelect>
@@ -36,7 +38,7 @@ function NavigationBar({ user, setUser }) {
      </div>
      <div>
       <Routes>
-        <Route path='/userfavorites' element={<UserFavorites />} />
+        <Route path='/userfavorites' element={<UserFavorites user= {user} />} />
         <Route path='/userratings' element={<UserRatings />} />
         <Route path='/usersettings' element={<UserSettings />} />
         <Route path='/' element={<Home />} />

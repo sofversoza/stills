@@ -3,9 +3,10 @@ import '../styles.css'
 import { Button, Form, Container } from 'react-bootstrap'
 
 
-function Login({setUser}) {
+function Login({setUser,setMood, mood}) {
 const [email, setEmail]= useState("");
 const [password, setPassword] = useState("");
+
 
 
 function handleSubmit(e){
@@ -56,12 +57,12 @@ function handleSubmit(e){
            <Form.Text>
              What are you in the mood for today?
            </Form.Text>
-           <Form.Check type="checkbox" label="Contemporary" style={{fontSize:'13px', marginTop: '5px'}}/>
-           <Form.Check type="checkbox" label="Drama" style={{fontSize:'13px'}}/>
-           <Form.Check type="checkbox" label="Horror/Thriller" style={{fontSize:'13px'}}/>
-           <Form.Check type="checkbox" label="Romance" style={{fontSize:'13px'}}/>
-           <Form.Check type="checkbox" label="Fantasy/Sci-Fi" style={{fontSize:'13px'}}/>
-           <Form.Check type="checkbox" label="Comedy/Family" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Contemporary" label="Contemporary" style={{fontSize:'13px', marginTop: '5px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Drama" label="Drama" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Horror, Thriller" label="Horror/Thriller"  style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Romance" label="Romance" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Fantasy" label="Fantasy/Sci-Fi" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Comedy, Family" label="Comedy/Family" style={{fontSize:'13px'}}/>
          </Form.Group>
          <Button variant='primary' type="submit" className="mt-2">
              Login
