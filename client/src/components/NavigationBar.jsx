@@ -1,17 +1,18 @@
 import React from 'react'
 import '../styles.css'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import UserFavorites from './UserFavorites';
 import UserRatings from './UserRatings';
 import UserSettings from './UserSettings'
 import Home from './Home'
+import Header from './Header'
 
-
-function NavigationBar() {
-
+function NavigationBar({ user, setUser }) {
+  
   return (
-    <Router>
+    <div>
+      <Header user={user} setUser={setUser}/>
     <div>
      <div>
       <Navbar bg='black' variant='dark' expand='sm' collapseOnSelect>
@@ -23,13 +24,12 @@ function NavigationBar() {
          <Navbar.Collapse>
 
           <Nav style={{padding: '40px'}}>
+            <Nav.Link id='nav-text' as={Link} to={'/'}>Home</Nav.Link>
             <NavDropdown id='nav-text' title="Account">
               <NavDropdown.Item as={Link} to={'/userfavorites'} id='nav-text-d'>Favorites</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={'/userratings'} id='nav-text-d'>Ratings</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={'/usersettings'} id='nav-text-d'>Settings</NavDropdown.Item>
             </NavDropdown>
-
-            <Nav.Link id='nav-text' as={Link} to={'/'}>Home</Nav.Link>
           </Nav>
          </Navbar.Collapse>
       </Navbar>
@@ -43,8 +43,25 @@ function NavigationBar() {
       </Routes>
      </div>
     </div>
-    </Router>
-  )
+  
+    </div>
+
+  //   <header>
+  //   <div>
+  //     <Link to="/">Home</Link>
+  //   </div>
+  //   <div>
+  //     {user ? (
+  //       <button onClick={handleLogoutClick}>Logout</button>
+  //     ) : (
+  //       <>
+  //         <Link to="/signup">Signup</Link>
+  //         <Link to="/login">Login</Link>
+  //       </>
+  //     )}
+  //   </div>
+  // </header>
+  );
 }
 
 export default NavigationBar;

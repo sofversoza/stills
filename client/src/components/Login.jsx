@@ -3,10 +3,10 @@ import '../styles.css'
 import { Button, Form, Container } from 'react-bootstrap'
 
 
-function Login() {
+function Login({setUser}) {
 const [email, setEmail]= useState("");
 const [password, setPassword] = useState("");
-const [user,setUser]= useState(null)
+
 
 function handleSubmit(e){
   e.preventDefault();
@@ -20,17 +20,11 @@ function handleSubmit(e){
   .then((r)=>{
     if(r.ok) {
       r.json().then((user)=> setUser(user));
+      
     }
   });
 }
 
-function handleLogout() {
-  fetch("/logout", { method: "DELETE" }).then((r) => {
-    if (r.ok) {
-      setUser(null);
-    }
-  });
-}
 
   return (
     <div id='form-font'>
