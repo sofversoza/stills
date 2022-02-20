@@ -6,8 +6,13 @@ class ReviewsController < ApplicationController
         render json: reviews
     end
 
+    def show
+        review = Review.find_by(movie_id: params[:movie_id])
+        render json: review
+    end
+
     def create
-        review = Review.create!(review_params)
+        review = Review.create!(rating:params[:newRating], comment:params[:newReview], user_id: params[:userId],movie_id: params[:movieId])
         render json: review, status: :created
     end
     
@@ -24,9 +29,6 @@ class ReviewsController < ApplicationController
     end
 
     private
-    def review_params
-        params.permit(:rating, :comment, :user_id, :movie_id)
-    end
 
     def render_unprocessable(i)
         render json: {errors: i.record.errors.full_messages}, status: :unprocessable_entity

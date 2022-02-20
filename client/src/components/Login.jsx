@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
 import '../styles.css'
 import { Button, Form, Container } from 'react-bootstrap'
+import { useNavigate } from "react-router-dom";
 
 
-function Login({setUser,setMood, mood}) {
+function Login({setUser,setMood}) {
 const [email, setEmail]= useState("");
 const [password, setPassword] = useState("");
-
+let navigate = useNavigate();
 
 
 function handleSubmit(e){
   e.preventDefault();
+  navigate("/")
   fetch("/login",{
     method: "POST",
     headers: {
@@ -23,6 +25,7 @@ function handleSubmit(e){
       r.json().then((user)=> setUser(user));
       
     }
+
   });
 }
 
@@ -57,12 +60,12 @@ function handleSubmit(e){
            <Form.Text>
              What are you in the mood for today?
            </Form.Text>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Contemporary" label="Contemporary" style={{fontSize:'13px', marginTop: '5px'}}/>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Drama" label="Drama" style={{fontSize:'13px'}}/>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Horror, Thriller" label="Horror/Thriller"  style={{fontSize:'13px'}}/>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Romance" label="Romance" style={{fontSize:'13px'}}/>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Fantasy" label="Fantasy/Sci-Fi" style={{fontSize:'13px'}}/>
-           <Form.Check onChange={(e)=> setMood([...mood,e.target.value])} type="checkbox" value="Comedy, Family" label="Comedy/Family" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Thriller" label="Thriller" style={{fontSize:'13px', marginTop: '5px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Drama" label="Drama" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Horror" label="Horror"  style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Romance" label="Romance" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Fantasy" label="Fantasy/Sci-Fi" style={{fontSize:'13px'}}/>
+           <Form.Check onChange={(e)=> setMood(e.target.value)} type="checkbox" value="Comedy" label="Comedy/Family" style={{fontSize:'13px'}}/>
          </Form.Group>
          <Button variant='primary' type="submit" className="mt-2">
              Login

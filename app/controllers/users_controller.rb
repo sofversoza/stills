@@ -18,7 +18,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_error
 
     def show
         user = User.find(params[:id])
-        render json: user, serializer: UserSerializer, status: :ok
+        render json: user, status: :ok
     end 
 
 

@@ -7,9 +7,7 @@ Favorite.destroy_all
 u1 = User.create!(full_name: "Sofia Versoza", username: "sof", password: "123sof", email: "sofversoza@gmail.com")
 u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", email: "tianxu@gmail.com")
 
- Movie.create(title:"Les Choristes", director: "Christophe Barratier ", cinematographer: "Carlo Varini", description:"The new teacher at a severely administered boys' boarding school works to positively affect the students' lives through music.
-     ",duration: 97, release_year: 1945,genre: "Drama, Musical", starring:"Gérard Jugnot, Francois Berleand, Jean-Baptiste Maunier
-   ",awards:"Austin Film Festival for Best Narrative Feature - Distributed, Bangkok International Film Festival for Best Director, César Awards France for Best Music Written for a Film & Best Sound, European Film Awards for European Composer, Ft. Lauderdale International Film Festival for Best Film, Heartland International Film Festival, Ljubljana International Film Festival, Lumiere Awards France for Best Film, National Board of Review for Top foreign films, Sant Jordi Awards for Best Foreign Film, Étoiles d'Or France for Best Composer",image1:"images/les-choristes1.jpeg",image2:"images/les-choristes2.jpeg",image3:"images/les-choristes3.jpeg")
+ Movie.create(title:"Les Choristes", director: "Christophe Barratier ", cinematographer: "Carlo Varini", description:"The new teacher at a severely administered boys' boarding school works to positively affect the students' lives through music.",duration: 97, release_year: 1945,genre: "Drama, Musical", starring:"Gérard Jugnot, Francois Berleand, Jean-Baptiste Maunier",awards:"Austin Film Festival for Best Narrative Feature - Distributed, Bangkok International Film Festival for Best Director, César Awards France for Best Music Written for a Film & Best Sound, European Film Awards for European Composer, Ft. Lauderdale International Film Festival for Best Film, Heartland International Film Festival, Ljubljana International Film Festival, Lumiere Awards France for Best Film, National Board of Review for Top foreign films, Sant Jordi Awards for Best Foreign Film, Étoiles d'Or France for Best Composer",image1:"les-choristes1.jpeg",image2:"les-choristes2.jpeg",image3:"les-choristes3.png")
 
    movies = Movie.create([
     {
@@ -101,7 +99,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
         starring: 'Gérard Jugnot, Francois Berleand, Jean-Baptiste Maunie',
         awards: 'BAFTA Film Award for Best Actor & Best Actor in a Supporting Role & Best Film Not in the English Language & Best Original Film Score & Best Screenplay - Original, Felix for Best Foreign Film & Best Cinematography, Silver Condor for Best Foreign Film, ASECAN Award for Best Foreign Film, Grand Prize of the Jury, Cleveland International Film Festival for Best Film, Cesar Award for Best Poster, DFWFCA Award for Best Foreign Language Film, Danish Film Awards for Best Foreign Film, David di Donatello Awards for Best Music, European Film Awards for European Actor of the Year & Special Prize of the Jury, Golden Globes(USA) for Best foreign film, KCFCC Award for best foreign film, ALFS Award for Actor of the year & Foreign Language Film Of the Year, Mainichi Film Concours for Best Foreign Language Film, OFTA Film Hall of Fame for Motion Picture, Young Artist Awards for Best Young Actor Under Nine Appearing in a Foreign Film',
         image1: 'ttdyy1.jpeg',
-        image2: 'ttdyy2.jpeg',
+        image2: 'ttdyy2.jpg',
         image3: 'ttdyy3.jpeg',
         current_mood:""
     },
@@ -146,7 +144,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
         starring: 'Ewan McGregor, Albert Finney, Helena Bonham Carter',
         awards: "",
         image1: 'bigfish1.jpeg',
-        image2: 'bigfish2.jpeg',
+        image2: 'bigfish2.png',
         image3: 'bigfish3.jpeg',
         current_mood:""
       },
@@ -162,7 +160,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
         awards: "Alliance of Women Film Journalists for Outstanding Achievement by a Woman in the Film Industry & Cultural Crossover Award, Argentinean Film Critics Association Awards for Best Foreign Film, Not in the Spanish Language, Cannes Film Festival, Cinemanila International Film Festival, César Awards France for Best Adapted Screenplay & Best First Film, Faro Island Film Festival for Best Newcomer, French Syndicate of Cinema Critics for Best First Film, Globes de Cristal Awards France for Best Film, Golden Trailer Awards for Most Original Foreign Trailer, International Cinephile Society Awards for Best Animated Film, Italian Online Movie Awards (IOMA), Jerusalem Film Festival for Best Feature, Los Angeles Film Critics Association Awards for Best Animation, National Board of Review USA, New York Film Critics Circle Award for Best Animated Film, New York Film Critics Online for Best Foreign Language Film, Rotterdam International Film Festival, Stockholm Film Festival,São Paulo International Film Festival for Best Foreign Feature Film, Vancouver International Film Festival, Women Film Critics Circle Awards for Best Foreign Film by or About Women, Étoiles d'Or France for Best First Work ",
         image1: 'persepolis1.jpeg',
         image2: 'persepolis2.jpeg',
-        image3: 'persepolis3.jpeg',
+        image3: 'persepolis3.png',
         current_mood:""
       }
     ])
@@ -178,7 +176,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Callan McAuliffe, Madeline Carroll',
           awards: 'Heartland Film for Truly Moving Picture Award, YoungArtist Awards',
           image1: 'Flipped1.jpeg',
-          image2: 'Flipped2.jpeg',
+          image2: 'Flipped2.jpg',
           image3: 'Flipped3.jpeg',
           current_mood: ''
         },
@@ -193,7 +191,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Audrey Hepburn, George Peppard',
           awards: 'Academy Awards USA for Best Music & Original Song & Best Music & Scoring of a Dramatic or Comedy Picture, David di Donatello Awards for Best Foreign Actress, Grammy Awards for Best Soundtrack Album or Recording of Score from Motion Picture or Television & Record of the Year, Laurel Awards for Top Song, National Film Preservation Board USA, Online Film & Television Association for Songs, Online Film & Television Association for Motion Picture, Writers Guild of America USA for Best Written American Comedy',
           image1: "breakfast-at-tiffany's1.jpeg",
-          image2: "breakfast-at-tiffany's2.jpeg",
+          image2: "breakfast-at-tiffany's2.jpg",
           image3: "breakfast-at-tiffany's3.jpeg",
           current_mood:''
         },
@@ -222,8 +220,8 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           description: "Playboy vet Henry sets his heart on romancing Lucy, but she has short-term memory loss; she can't remember anything that happened the day before. So every morning, Henry has to woo her again. Her friends and family are very protective, and Henry must convince them that he's in it for love.",
           starring: 'Adam Sandler, Drew Barrymore, Rob Schneider, Sean Astin',
           awards: "BMI Film & TV Awards, Kids' Choice Awards for Favorite Movie Actor, MTV Movie + TV Awards for Best On-Screen Team, People's Choice Awards for Favorite On-Screen Chemistry, Teen Choice Awards for Choice Movie - Date Movie & Choice Movie Actor - Comedy",
-          image1: '50_first_dates1.jpeg',
-          image2: '50_first_dates2.jpeg',
+          image1: '50-first-dates1.jpg',
+          image2: '50-first-dates2.jpeg',
           image3: '50_first_dates3.jpeg',
           current_mood:''
         },
@@ -255,7 +253,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Jun Ji-hyun, Jung Woo-sung, Lee Sung-jae',
           awards: 'Verona Love Screens Film Festival',
           image1: 'daisy1.jpeg',
-          image2: 'daisy2.jpeg',
+          image2: 'daisy2.png',
           image3: 'daisy3.jpeg',
           current_mood: ''
         },
@@ -270,7 +268,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Jeff Bridges, Riley Osborne',
           awards: "Annie Awards for Outstanding Achievement in Music in an Animated Feature Production, Behind the Voice Actors Awards for Best Vocal Ensemble in a TV Special/Direct-to-DVD Title or Short & Best Female Vocal Performance in a TV Special/Direct-to-DVD Title or Short & Best Male Vocal Performance in a TV Special/Direct-to-DVD Title or Short, British Academy Children's Awards for Feature Film, César Awards for Best Animated Film, Faro Island Film Festival for Special Mention & Animation Competition",
           image1: 'le-petit-prince1.jpeg',
-          image2: 'le-petit-prince2.jpeg',
+          image2: 'le-petit-prince2.jpg',
           image3: 'le-petit-prince3.jpeg',
           current_mood: ''
         },
@@ -315,8 +313,8 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Suraj Sharma, Irrfan Khan, Tabu',
           awards: "Academy Awards for Best Achievement in Directing & Best Achievement in Cinematography & Best Achievement in Music Written for Motion Pictures & Original Score & Best Achievement in Visual Effects, BAFTA Awards for Best Cinematography & Best Special Visual Effects, 3D Creative Arts Awards for Best International 3D Feature & Best Stereography, Academy of Science Fiction, Fantasy & Horror Films for Best Fantasy Film & Best Performance by a Younger Actor, Golden Globes for Best Original Score - Motion Pictures, Hollywood Post Alliance for Outstanding Color Grading - Feature Film, IGN Summer Movie Awards for Best Fantasy Movie & Best 3D Movie & Best Fantasy Movie, International Film Music Critics Award (IFMCA) for Film Score of the Year, International Online Cinema Awards for Best Cinematography & Best Visual Effects",
           image1: 'life-of-pi1.jpg',
-          image2: 'life-of-pi2.jpg',
-          image3: 'life-of-pi3.jpg',
+          image2: 'life-of-pi2.jpeg',
+          image3: 'life-of-pi3.jpeg',
           current_mood: ''
         }
       ])
@@ -377,8 +375,8 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
             starring: "Bill Murray, Bryan Cranston, Tilda Swinton",
             awards: "Annie Awards for Outstanding Achievement for Voice Acting in an Animated Feature Production, Art Directors Guild for Animated Film, Atlanta Film Critics Circle for Best Animated Film, Berlin International Film Festival for Best Director, Boston Society of Film Critics Awards for Best Animated Film, Casting Society of America for Outstanding Achievement in Casting, Cinema Audio Society for Outstanding Achievement in Sound Mixing for Motion Pictures, CinEuphoria Awards for Best Animated Character & Best Animated Film, Dallas-Fort Worth Film Critics Association Awards for Best Animated Film & Best Musical Score, Golden Trailer Awards for Best Animation/Family & Best Motion Poster, Hawaii Film Critics Society for Best Vocal/Motion Capture Performance, Hollywood Music In Media Awards for Best Original Score, Houston Film Critics Society Awards for Best Animated Film, Imagine Film Festival for Audience Award, International Cinephile Society Awards for Best Animated Film, Best Animated Film for Best Animated Feature ",
             image1: 'isle-of-dog1.jpeg',
-            image2: 'isle-of-dog2.jpeg',
-            image3: 'isle-of-dog3.jpeg',
+            image2: 'isle-of-dogs2.jpeg',
+            image3: 'isle-of-dogs3.jpeg',
             current_mood: ''
           }
        
@@ -395,8 +393,8 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           description: "In 18th-century Maine, Barnabas Collins (Johnny Depp) presides over the town of Collinsport. A rich and powerful playboy, Barnabas seals his own doom when he breaks the heart of a witch named Angelique (Eva Green). Angelique turns Barnabas into a vampire and buries him alive. Two centuries later, Barnabas escapes from his tomb and finds 1972 Collinsport a very different place. His once-grand estate has fallen into ruin, and the dysfunctional remnants of his family have fared little better.",
           starring: 'Johnny Depp, Michelle Pfeiffer, Bella Heathcote, Eva Green',
           awards: 'BMI Film Music Award, Kids Choice Awards Favorite Movie Actor',
-          image1: 'images/dshadows1.jpg',
-          image2: 'images/dshadows1.jpg',
+          image1: 'dshadows1.jpg',
+          image2: 'dshadows1.jpg',
           image3: 'dshadows1.jpg',
           current_mood: ''
         },
@@ -457,7 +455,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           awards: 'MTV Movie Award for Best Villain, MTV Movie Award for Best Fight, MTV Movie Award for Best Female Performance',
           image1: 'killbill1.jpg',
           image2: 'killbill2.jpg',
-          image3: 'killbill3.jpg',
+          image3: 'killbill3.png',
           current_mood: ''
         }
       ])
@@ -519,8 +517,8 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Natalie Portman, Jennifer Jason Leigh, Gina Rodriguez, Tessa Thompson',
           awards: ' CFCA Award Best Use of Visual Effects, CinEuphoria Best Visual Effects & Best Art Direction, DFCS Award Best Science-Fiction/Horror Film, Golden Carp Film Award International Best Motion Picture of the Year, FFCC Award Best Visual Effects, Fright Meter Award Best Special Effects, GAFCA Award Best Original Score, Golden Schmoes Most Underrated Movie of the Year & Trippiest Movie of the Year, IGN Award Best Sci-Fi/Fantasy Movie, Special Crystal Pine Best Sound Editing, MCFCA Award Best Sound Integration, Odyssey Award Best Sci-Fi Film, OFCS Award Best Visual Effects, PCC Award Best Science Fiction Film, UFCA Award Best Original Score',
           image1: 'annihilation1.jpg',
-          image2: 'annihilation2.jpg',
-          image3: 'annihilation3.jpg',
+          image2: 'annihilation2.jpeg',
+          image3: 'annihilation3.jpeg',
           current_mood: ''
         },
         {
@@ -552,7 +550,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           starring: 'Brad Pitt, Kevin Spacey, Morgan Freeman, Gwyneth Paltrow',
           awards: 'Academy Awards Oscar Best Film Editing, Felix Best Director, Saturn Award Best Writing & Best Make-up, ASCAP Award Top Box Office Films, ACCA Best Director & Best Cinematography & Best Film Editing, Blue Ribbon Award Best Foreign Language Film, Critics Choice Award Best Supporting Actor, CFCA Award Best Cinematography, DFWFCA Award Best Picture, Empire Award Best Film & Best Actor, Fangoria Chainsaw Award Best Supporting Actor, International Fantasy Film Award Best Film & Best Screenplay, Golden Trailer Award Best of the Decade, Hochi Film Award Best Foreign Language Film, ALFS Award Actor of the Year, MTV Movie Award Best Movie & Most Desirable Male Lead & Best Villain, NBR Award Best Supporting Actor, NYFCC Award Best Supporting Actor, OFTA Film Hall of Fame Motion Picture, Rosa de Sant Jordi Audience Award Best Foreign Film, Universe Reader’s Choice Award Best Horror Film.',
           image1: 'seven1.jpg',
-          image2: 'seven2.jpg',
+          image2: 'seven2.jpeg',
           image3: 'seven3.jpg',
           current_mood: ''
         },
@@ -611,9 +609,9 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           description: 'This psychedelic tour of life after death is seen entirely from the point of view of Oscar (Nathaniel Brown), a young American drug dealer and addict living in Tokyo with his prostitute sister, Linda (Paz de la Huerta). When Oscar is killed by police during a bust gone bad, his spirit journeys from the past -- where he sees his parents before their deaths -- to the present -- where he witnesses his own autopsy -- and then to the future, where he looks out for his sister from beyond the grave.',
           starring: 'Cyril Roy, Nathaniel Brown, Paz de la Huerta, Masato Tanno',
           awards: 'International Cinematographer’s Film Festival Winner, Narcisse Award Best Feature Film, Catalonian International Film Festival Best Cinematography & Special Prize of the Jury',
-          image1: 'eternal1.jpg',
-          image2: 'eternal2.jpg',
-          image3: 'eternal3.jpg',
+          image1: 'void1.jpg',
+          image2: 'void2.jpg',
+          image3: 'void3.jpg',
           current_mood: ''
         }
       ])
@@ -631,7 +629,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           awards: 'Hong Kong Film Awards Best Supporting Actress & Best Cinematography & Best Original Score, Golden Horse Awards Best Film Editing, Hong Kong Film Critics Society Awards Film of Merit, Golden Bauhinia Awards Best Supporting Actress & Best Cinematography.',
           image1: 'fallenA1.jpg',
           image2: 'fallenA2.jpg',
-          image3: 'fallenA3.jpg',
+          image3: 'fallenA3.png',
           current_mood: ''
         },
         {
@@ -646,7 +644,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           awards: 'AFCA Award Best Ensemble, CFCA Award Best Art Direction/Production Design & Best Editing, CIC Award Best Supporting Actor & Best Ensemble Cast, DFCS Award Best Comedy Film & Best Ensemble, FFCC Award Best Original Screenplay, NCFCA Award Best Editing, NDFS Award Best Production Design, NTFCA Award Best Supporting Actor & Best Supporting Actress & Gary Murray Award (Best Ensemble), OFCC Award Best Ensemble Cast, OFCS Award Best Production Design, PCA Award Best Male Supporting Role, SEFCA Best Ensemble, SLFCA Award Best Production Design.',
           image1: 'frenchdispatch1.png',
           image2: 'frenchdispatch2.png',
-          image3: 'frenchdispatch3.png',
+          image3: 'frenchdispatch3.jpg',
           current_mood: ''
         }
       ])
@@ -735,36 +733,35 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
         {
           rating: 4,
           comment: 'AWESOME!!!!!',
-          movie: movies.first,
-          user: users.first
+          movie: Movie.first,
+          user: User.first
         },
         {
           rating: 4.5,
           comment: 'WOULD WATCH AGAIN!!!!',
-          movie: movies.last,
-          user: users.first
+          movie: Movie.last,
+          user: User.first
         },
         {
           rating: 5,
           comment: 'REALLY ENJOYED IT!!!!',
-          movie: movies.first,
-          user: users.last
+          movie: Movie.first,
+          user: User.last
         },
         {
           rating: 3.5,
           comment: 'It was okay',
-          movie: movies.last,
-          user: users.last
+          movie: Movie.last,
+          user: User.last
         },
         {
           rating: 5,
           comment: 'PERFECT',
-          movie: movies.first,
-          user: users.last
+          movie: Movie.first,
+          user: User.last
         },    
       ])
     
     
     puts 'Done seeding!!!!!!!!!!'
-
 

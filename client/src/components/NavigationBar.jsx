@@ -38,9 +38,9 @@ function NavigationBar({ user, setUser, setMood}) {
      </div>
      <div>
       <Routes>
-        <Route path='/userfavorites' element={<UserFavorites user= {user} />} />
-        <Route path='/userratings' element={<UserRatings />} />
-        <Route path='/usersettings' element={<UserSettings />} />
+        {/* <Route path='/userfavorites' element={<UserFavorites user= {user} />} /> */}
+        {/* <Route path='/userratings' element={<UserRatings />} />
+        <Route path='/usersettings' element={<UserSettings />} /> */}
         <Route path='/' element={<Home />} />
       </Routes>
      </div>

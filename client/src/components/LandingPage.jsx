@@ -3,11 +3,11 @@ import Login from './Login'
 import {Container, Row, Col} from 'react-bootstrap'
 import Signup from './Signup'
 
-function LandingPage() {
+function LandingPage({setUser}) {
   return (
     <div>
       <Container>
-         <Login />
+         <Login setUser= {setUser} />
       </Container>
     </div>
   )
