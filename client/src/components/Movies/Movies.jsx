@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
-import NavigationBar from '../NavigationBar'
 
-function Movies() {
-  const [movies, setMovies] = useState([])
 
-  useEffect(() => {
-      fetch("/movies")
-      .then(res => res.json())
-      .then(movies => setMovies(movies))
-  }, [])
+function Movies({movies,getProps}) {
+  
+     
+  // const myMovies = movies.filter((movie) => movie.users.includes({user}))
 
-  const grid = movies.map(item => {
-    return (
+  const grid = movies.map(item=>{
+      return(
         <MovieCard 
-            key={item.id}
-            props={item}
-        />
-    )
+        key={item.id}
+        props={item}
+        getProps={getProps}
+    />
+
+      )
+
   })
 
   return (
     <div className='grid'>
-      <NavigationBar />
        {grid}
     </div>
   )

@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :movies, param: :slug
-  resources :reviews, only: [:index, :destroy, :create, :update]
-  resources :users, only: [:index, :show, :create, :update, :destroy]
-  resources :users, only: [:show] do 
-    resources :favorites, only: [:index, :create, :destroy] 
-  end
+  resources :reviews
+  resources :users 
+  resources :favorites, only: [:index, :create, :destroy] 
+  post"/favorites", to: "favorites#create"
+  post"/reviews", to: "reviews#create"
   post"/login", to: "sessions#create"
   delete"/logout", to: "sessions#destroy"
   post"/signup", to: "users#create"

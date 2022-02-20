@@ -1,20 +1,41 @@
 import React from 'react'
+import MovieCard from './Movies/MovieCard'
 
 
-function UserFavorite({user}){
-    const movies = user.movies
-    const grid = movies.map(item => {
+function UserFavorite({user, getProps}){
+    const grid = user.movies.map(item => {
         return (
-            <div id ={item.id}>
-                <h1>{item.title} </h1>
-                <p>{item.description}</p>
+            <div>
+            <MovieCard 
+                key={item.id}
+                props={item}
+                getProps={getProps}
+            />
+            <button onClick={handleClick}> remove </button>
             </div>
+            
         )
+     
     })
+    function handleClick(){
+    
+    // fetch("/reviews/:id", { method: "DELETE" }).then((r) => {
+    //     if (r.ok) {
+    //         setUser(null);
+    //         setMood("")
+    //         }
+    //     });
+        
+
+    }
+
+
+
 
     return(
      <div>
         {grid}
+        
      </div>
     
     )

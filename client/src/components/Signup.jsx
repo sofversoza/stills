@@ -3,17 +3,12 @@ import '../styles.css'
 import { Button, Form, Container, Row, Col } from 'react-bootstrap'
 
 
-function Signup({ setMember, setUser }) {
+function Signup({ setUser,user }) {
   const [fullname, setFullname] = useState("")
   const [email,setEmail] = useState("") 
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   
-
-
-  function handleMember(){
-    setMember(true)
-  }
 
 
   function handleSubmit(e) {
@@ -89,7 +84,6 @@ function Signup({ setMember, setUser }) {
           <Button variant='primary' type="submit" className="mt-2">
             Sign up
           </Button>
-          <Button onClick= {handleMember}>I'm a member</Button>
         </Form>
       </Container>
     </div>

@@ -12,7 +12,7 @@ function Header({ user, setUser,setMood }) {
         fetch("/logout", { method: "DELETE" }).then((r) => {
           if (r.ok) {
             setUser(null);
-            setMood([])
+            setMood("")
           
           }
         });
