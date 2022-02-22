@@ -1,17 +1,10 @@
 import React from 'react'
 import '../styles.css'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { Routes, Route, Link } from 'react-router-dom';
-import UserFavorites from './UserFavorites';
-import UserRatings from './UserRatings';
-import UserSettings from './UserSettings'
-import Home from './Home'
+import { Link } from 'react-router-dom';
 import Header from './Header'
 
-
-function NavigationBar({ user, setUser, setMood}) {
-  
-  
+function NavigationBar({ user, setUser, setMood }) {
   return (
     <div>
       <Header user={user} setUser={setUser} setMood={setMood}/>
@@ -24,7 +17,6 @@ function NavigationBar({ user, setUser, setMood}) {
          </Navbar.Brand>
          <Navbar.Toggle />
          <Navbar.Collapse>
-
           <Nav style={{padding: '40px'}}>
             <Nav.Link id='nav-text' as={Link} to={'/'}>Home</Nav.Link>
             <NavDropdown id='nav-text' title="Account">
@@ -37,32 +29,9 @@ function NavigationBar({ user, setUser, setMood}) {
       </Navbar>
      </div>
      <div>
-      <Routes>
-        {/* <Route path='/userfavorites' element={<UserFavorites user= {user} />} /> */}
-        {/* <Route path='/userratings' element={<UserRatings />} />
-        <Route path='/usersettings' element={<UserSettings />} /> */}
-        <Route path='/' element={<Home />} />
-      </Routes>
      </div>
     </div>
-  
     </div>
-
-  //   <header>
-  //   <div>
-  //     <Link to="/">Home</Link>
-  //   </div>
-  //   <div>
-  //     {user ? (
-  //       <button onClick={handleLogoutClick}>Logout</button>
-  //     ) : (
-  //       <>
-  //         <Link to="/signup">Signup</Link>
-  //         <Link to="/login">Login</Link>
-  //       </>
-  //     )}
-  //   </div>
-  // </header>
   );
 }
 

@@ -5,53 +5,46 @@ import '../../styles.css'
 import { Row, Col } from 'react-bootstrap'
 
 
-
-function MovieCard({ props,getProps }) {
+function MovieCard({ props, getProps }) {
   let navigate = useNavigate()
+  
   function handleClick(props){
     getProps(props)
     navigate(`/movies/${props.slug}`)
-   
   }
  
   return (
-    <div className="movie-grid"  >
+    <div className='mt-4 container-fluid'>
          <Row>
-         <Col> 
-          {/* <Link to={`/movies/${props.slug}`}> */}
+         <Col className='no-padding'> 
             <img
                 src={images[`${props.image1}`].default}
                 alt={props.title}
-                id="stills"
-                height="175px"
-                width= "350px"
+                height='265px'
+                width='500px'
+                id='img-div'
                 onClick= {()=>{handleClick(props)}}
             />
-           {/* </Link> */}
           </Col>  
-           <Col>  
-           {/* <Link to={`/movies/${props.slug}`}> */}
+           <Col className='no-padding'>  
              <img
                 src={images[`${props.image2}`].default}
                 alt={props.title}
-                id="stills"
-                height="175px"
-                width= "350px"
+                height='265px'
+                width='510px'
+                id='img-div'
                 onClick= {()=>{handleClick(props)}}
              />
-            {/* </Link> */}
             </Col>
-            <Col> 
-            {/* <Link to={`/movies/${props.slug}`}> */}
+            <Col className='no-padding'> 
              <img
                 src={images[`${props.image3}`].default}
                 alt={props.title}
-                id="stills"
-                height="175px"
-                width= "350px"
+                height='265px'
+                width='510px'
+                id='img-div'
                 onClick= {()=>{handleClick(props)}}
              />
-           {/* </Link> */}
           </Col>   
          </Row>
     </div>

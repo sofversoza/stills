@@ -38,17 +38,21 @@ body {
     padding-left: 15px;
 }
 
-.container-login {
-    height: 100vh;
-    width: 120vh;
+#form-div {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 70px;
+    /* width: 60%; */
+}
+
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #login-form {
-    width: 55%;
     height: 45%;
+    width: 100%;
     background-color: white;
     padding: 30px;
     border-radius: 3%;
@@ -57,7 +61,7 @@ body {
 
 #signup-form {
     height: 46%;
-    width: 60%;
+    width: 45%;
     background-color: white;
     padding: 30px;
     border-radius: 3%;
@@ -67,16 +71,6 @@ body {
 #form-label {
     font-size: 25px;
     margin-bottom: 16px;
-}
-
-#form-font {
-    font-family: 'Raleway', sans-serif;
-}
-
-.movie-grid {
-    padding-top: 15px;
-    justify-content: center;
-    padding-left: 30px;
 }
 
 #main-div-movie {
@@ -106,4 +100,13 @@ body {
     height: 100%;
     width: 100%;
     object-fit: center;
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.rating-info {
+    font-family: 'Raleway', sans-serif;
 }

@@ -4,13 +4,12 @@ import { Button, Form, Container } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom";
 
 
-function Login({setUser,setMood}) {
-const [email, setEmail]= useState("");
-const [password, setPassword] = useState("");
-let navigate = useNavigate();
+function Login({ setUser, setMood }) {
+ const [email, setEmail]= useState("");
+ const [password, setPassword] = useState("");
+ let navigate = useNavigate();
 
-
-function handleSubmit(e){
+ function handleSubmit(e){
   e.preventDefault();
   navigate("/")
   fetch("/login",{
@@ -23,16 +22,13 @@ function handleSubmit(e){
   .then((r)=>{
     if(r.ok) {
       r.json().then((user)=> setUser(user));
-      
     }
-
   });
-}
-
+ }
 
   return (
-    <div id='form-font'>
-    <Container className="container">
+    <div id='form-div'>
+    <Container className="form-container">
      <Form id='login-form' onSubmit={handleSubmit}>
        <Form.Label id='form-label'>Please Login</Form.Label>
          <Form.Group className="mb-3">
@@ -73,9 +69,7 @@ function handleSubmit(e){
      </Form>
     </Container> 
  </div>
-
   )
-
 }
 
 export default Login
