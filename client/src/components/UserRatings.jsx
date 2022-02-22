@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import images from '../images'
 
 function UserRatings({user,movies}){
+const [reviews, setReviews]= useState(user.reviews)
   
-const grid = user.reviews.map(r=>{
+const grid = reviews.map(r=>{
     const movie=movies.filter((m)=> m.id === r.movie_id)[0]
         return(
             <div id= {r.id}>
@@ -19,8 +20,6 @@ const grid = user.reviews.map(r=>{
             </div>
         )
     })
-   
-
 
 return(
 <div>

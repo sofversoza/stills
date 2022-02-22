@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import MovieCard from './MovieCard'
 
 
-function Movies({movies,getProps}) {
+
+function Movies({movies,getProps,user}) {
   
      
   // const myMovies = movies.filter((movie) => movie.users.includes({user}))
@@ -13,6 +14,8 @@ function Movies({movies,getProps}) {
         key={item.id}
         props={item}
         getProps={getProps}
+        movies={movies}
+        user={user}
     />
 
       )

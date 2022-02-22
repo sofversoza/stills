@@ -19,12 +19,16 @@ function App() {
   const [user, setUser] = useState(null)
   const [mood, setMood] = useState("")
   const [movies, setMovies] = useState([])
-  const[props,setProps]= useState([])
-   let params = useParams();
+  const [props,setProps]= useState([])
+  // const [data,setData] = useState([])
+  //  let params = useParams();
  
-function getProps(props){
-  setProps(props)
-}
+// function getProps(props){
+//   // fetch(`/movies/${props.slug}`)
+//   //    .then(res => res.json())
+//   //    .then(data => setProps(data))
+//   setProps(props)
+// }
  
 
   useEffect(() => {
@@ -35,21 +39,17 @@ function getProps(props){
       }
     });
 
-    // fetch("/movies").then((r)=>{
-    //   if(r.ok){
-    //     r.json().then((movies)=> setMovies(movies));
-    //   }
-    // })
-    
-
- 
-      fetch("/movies")
+    fetch("/movies")
       .then(res => res.json())
       .then(movies => setMovies(movies))
- 
 
+    // fetch(`/movies/${props.slug}`)
+    //   .then(res=>res.json())
+    //   .then(data=> console.log(data))
+ 
   }, []);
 
+  
 
   return (
     // 
@@ -60,9 +60,9 @@ function getProps(props){
       {user ? (
         <Routes>
           {/* <Route path='/' element={<Home movies={movies} mood={mood}/>} /> */}
-          <Route exact path='/' element={<Movies getProps={getProps} movies={movies} user= {user}/>} />
-          <Route exact path={`/movies/${props.slug}`} element={<Movie props={props} movies={movies} user={user} />} />
-          <Route path='/userfavorites' element={<UserFavorites user= {user} getProps={getProps} movies={movies}/>} />
+          <Route exact path='/' element={<Movies  movies={movies} user= {user} />} />
+          {/* <Route exact path={`/movies/${props.slug}`} element={<Movie props={props} movies={movies} user={user} />} /> */}
+          <Route path='/userfavorites' element={<UserFavorites user= {user}  movies={movies} />} />
           <Route path='/userRatings' element={<UserRatings user= {user} movies={movies} />} />
         </Routes>
       ): (
