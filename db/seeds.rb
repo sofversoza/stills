@@ -1,13 +1,11 @@
 puts "Seeding.............."
- User.destroy_all
+User.destroy_all
 Movie.destroy_all
 Review.destroy_all
 Favorite.destroy_all
 
 u1 = User.create!(full_name: "Sofia Versoza", username: "sof", password: "123sof", email: "sofversoza@gmail.com")
 u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", email: "tianxu@gmail.com")
-
- Movie.create(title:"Les Choristes", director: "Christophe Barratier ", cinematographer: "Carlo Varini", description:"The new teacher at a severely administered boys' boarding school works to positively affect the students' lives through music.",duration: 97, release_year: 1945,genre: "Drama, Musical", starring:"Gérard Jugnot, Francois Berleand, Jean-Baptiste Maunier",awards:"Austin Film Festival for Best Narrative Feature - Distributed, Bangkok International Film Festival for Best Director, César Awards France for Best Music Written for a Film & Best Sound, European Film Awards for European Composer, Ft. Lauderdale International Film Festival for Best Film, Heartland International Film Festival, Ljubljana International Film Festival, Lumiere Awards France for Best Film, National Board of Review for Top foreign films, Sant Jordi Awards for Best Foreign Film, Étoiles d'Or France for Best Composer",image1:"les-choristes1.jpeg",image2:"les-choristes2.jpeg",image3:"les-choristes3.png")
 
    movies = Movie.create([
     {
@@ -83,6 +81,117 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
       image1: 'atonement1.jpg',
       image2: 'atonement2.jpg',
       image3: 'atonement3.jpg',
+      current_mood: ''
+    }
+  ])
+
+  movies = Movie.create([
+    {
+      title: 'Dark Shadows',
+      director: 'Tim Burton',
+      cinematographer: 'Bruno Delbonnel',
+      genre: 'Fantasy, Horror',
+      duration: 103,
+      release_year: 2012,
+      description: "In 18th-century Maine, Barnabas Collins (Johnny Depp) presides over the town of Collinsport. A rich and powerful playboy, Barnabas seals his own doom when he breaks the heart of a witch named Angelique (Eva Green). Angelique turns Barnabas into a vampire and buries him alive. Two centuries later, Barnabas escapes from his tomb and finds 1972 Collinsport a very different place. His once-grand estate has fallen into ruin, and the dysfunctional remnants of his family have fared little better.",
+      starring: 'Johnny Depp, Michelle Pfeiffer, Bella Heathcote, Eva Green',
+      awards: 'BMI Film Music Award, Kids Choice Awards Favorite Movie Actor',
+      image1: 'dshadows1.jpg',
+      image2: 'dshadows2.jpg',
+      image3: 'dshadows3.jpg',
+      current_mood: ''
+    },
+    {
+      title: 'Edward Scissorhands',
+      director: 'Tim Burton',
+      cinematographer: 'Stefan Czapsky',
+      genre: 'Fantasy, Romance',
+      duration: 105,
+      release_year: 1990,
+      description: "A scientist (Vincent Price) builds an animated human being -- the gentle Edward (Johnny Depp). The scientist dies before he can finish assembling Edward, though, leaving the young man with a freakish appearance accentuated by the scissor blades he has instead of hands. Loving suburban saleswoman Peg (Dianne Wiest) discovers Edward and takes him home, where he falls for Peg's teen daughter (Winona Ryder). However, despite his kindness and artistic talent, Edward's hands make him an outcast.",
+      starring: ' Johnny Depp, Winona Ryder, Dianne Wiest',
+      awards: "BAFTA Film Award Best Production Design, Felix Best Original Score, Felix Best Art Direction, Felix Best Costume Design, Felix Best Makeup, Saturn Award Best Fantasy Film, Hugo Awards Best Dramatic Presentation, Sant Jordi Awards Best Foreign Film & Best Foreign Actress",
+      image1: 'edward1.jpg',
+      image2: 'edward2.jpg',
+      image3: 'edward3.jpg',
+      current_mood: ''
+    },
+    {
+      title: 'Romeo and Juliet',
+      director: 'Raz Luhrmann',
+      cinematographer: 'Donald McAlpine',
+      genre: 'Drama, Romance',
+      duration: 120,
+      release_year: 1996,
+      description: 'Baz Luhrmann helped adapt this classic Shakespearean romantic tragedy for the screen, updating the setting to a post-modern city named Verona Beach. In this version, the Capulets and the Montagues are two rival gangs. Juliet (Claire Danes) is attending a costume ball thrown by her parents. Her father Fulgencio Capulet (Paul Sorvino) has arranged her marriage to the boorish Paris (Paul Rudd) as part of a strategic investment plan. Romeo attends the masked ball and he and Juliet fall in love.',
+      starring: 'Leonardo DiCaprio, Claire Danes, Paul Rudd, John Leguizamo',
+      awards: "BAFTA Award for Best Original Score, Silver Bear for Best Actor, BAFTA Award for Best Direction, BAFTA Award for Best Adapted Screenplay, MTV Movie Award for Best Female Performance, BAFTA Award for Best Production Design, Satellite Award for Best Art Direction and Production Design, London Film Critics' Circle Award for Actress of the Year, Favorite Actor - Drama/Romance, Best Performance by a Young Actress in a Drama Film, Favorite Actress - Romance",
+      image1: 'romeo1.jpg',
+      image2: 'romeo2.jpg',
+      image3: 'romeo3.jpg',
+      current_mood: ''
+    },
+    {
+      title: 'American Psycho',
+      director: 'Marry Harron',
+      cinematographer: 'Andrzej Sekula',
+      genre: 'Comedy, Horror',
+      duration: 101,
+      release_year: 2000,
+      description: "In New York City in 1987, a handsome, young urban professional, Patrick Bateman (Christian Bale), lives a second life as a gruesome serial killer by night. The cast is filled by the detective (Willem Dafoe), the fiance (Reese Witherspoon), the mistress (Samantha Mathis), the coworker (Jared Leto), and the secretary (Chloë Sevigny). This is a biting, wry comedy examining the elements that make a man a monster.",
+      starring: 'Christian Bale, Bret Easton Ellis, Jared Leto, Reese Witherspoon, Chloë Sevigny, Willem Dafoe',
+      awards: 'ACCA Best Actor in a Leading Role, Chlotrudis Award Best Adapted Screenplay & Best Actor, Fangoria Chainsaw Awards Best Wide-Release Film & Best Actor, Golden Train Award Best Actor, IHG Award Best Movie, National Board of Review Special Recognition.',
+      image1: 'psycho1.jpg',
+      image2: 'psycho2.jpg',
+      image3: 'psycho3.jpg',
+      current_mood: ''
+    },
+    {
+      title: 'Kill Bill Vol. 1',
+      director: 'Quentin Tarantino',
+      cinematographer: 'Robert Richardson',
+      genre: 'Action, Crime',
+      duration: 101,
+      release_year: 2003,
+      description: 'A former assassin, known simply as The Bride (Uma Thurman), wakes from a coma four years after her jealous ex-lover Bill (David Carradine) attempts to murder her on her wedding day. Fueled by an insatiable desire for revenge, she vows to get even with every person who contributed to the loss of her unborn child, her entire wedding party, and four years of her life. After devising a hit list, The Bride sets off on her quest, enduring unspeakable injury and unscrupulous enemies.',
+      starring: 'Uma Thurman, Lucy Liu, David Carradine',
+      awards: 'MTV Movie Award for Best Villain, MTV Movie Award for Best Fight, MTV Movie Award for Best Female Performance',
+      image1: 'killbill1.jpg',
+      image2: 'killbill2.jpg',
+      image3: 'killbill3.png',
+      current_mood: ''
+    }
+  ])
+
+  movies = Movie.create([
+    {
+      title: 'Fallen Angels',
+      director: 'Wong Kar-wai',
+      cinematographer: 'Christopher Doyle, Mark Lee Ping-bing, Chan Kwok-Hung',
+      genre: 'Drama, Romance',
+      duration: 95,
+      release_year: 1995,
+      description: "An assassin, his boss, an entrepreneur and two women cross paths in Hong Kong as their professional and love lives collide and influence each other, mostly without their knowledge.",
+      starring: 'Leon Lai, Takeshi Kaneshiro, Michelle Reis, Charlie Yeung',
+      awards: 'Hong Kong Film Awards Best Supporting Actress & Best Cinematography & Best Original Score, Golden Horse Awards Best Film Editing, Hong Kong Film Critics Society Awards Film of Merit, Golden Bauhinia Awards Best Supporting Actress & Best Cinematography.',
+      image1: 'fallenA1.jpg',
+      image2: 'fallenA2.jpg',
+      image3: 'fallenA3.png',
+      current_mood: ''
+    },
+    {
+      title: 'The French Dispatch',
+      director: 'Wes Anderson',
+      cinematographer: 'Robert Yeoman',
+      genre: 'Comedy, Romance',
+      duration: 108,
+      release_year: 2021,
+      description: 'A love letter to journalists set in an outpost of an American newspaper in a fictional 20th-century French city that brings to life a collection of stories published in "The French Dispatch."',
+      starring: ' Bill Murray, Timothée Chalamet, Owen Wilson, Tilda Swinton, Audrien Brody, Benicio del Toro, Léa Seydoux, Saoirse Ronan, Willem Dafoe, Kate Winslet',
+      awards: 'AFCA Award Best Ensemble, CFCA Award Best Art Direction/Production Design & Best Editing, CIC Award Best Supporting Actor & Best Ensemble Cast, DFCS Award Best Comedy Film & Best Ensemble, FFCC Award Best Original Screenplay, NCFCA Award Best Editing, NDFS Award Best Production Design, NTFCA Award Best Supporting Actor & Best Supporting Actress & Gary Murray Award (Best Ensemble), OFCC Award Best Ensemble Cast, OFCS Award Best Production Design, PCA Award Best Male Supporting Role, SEFCA Best Ensemble, SLFCA Award Best Production Design.',
+      image1: 'frenchdispatch1.png',
+      image2: 'frenchdispatch2.png',
+      image3: 'frenchdispatch3.jpg',
       current_mood: ''
     }
   ])
@@ -164,6 +273,9 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
         current_mood:""
       }
     ])
+
+    Movie.create(title:"Les Choristes", director: "Christophe Barratier ", cinematographer: "Carlo Varini", description:"The new teacher at a severely administered boys' boarding school works to positively affect the students' lives through music.",duration: 97, release_year: 1945,genre: "Drama, Musical", starring:"Gérard Jugnot, Francois Berleand, Jean-Baptiste Maunier",awards:"Austin Film Festival for Best Narrative Feature - Distributed, Bangkok International Film Festival for Best Director, César Awards France for Best Music Written for a Film & Best Sound, European Film Awards for European Composer, Ft. Lauderdale International Film Festival for Best Film, Heartland International Film Festival, Ljubljana International Film Festival, Lumiere Awards France for Best Film, National Board of Review for Top foreign films, Sant Jordi Awards for Best Foreign Film, Étoiles d'Or France for Best Composer",image1:"les-choristes1.jpeg",image2:"les-choristes2.jpeg",image3:"les-choristes3.png")
+
     movies = Movie.create([
         {
           title: 'Flipped',
@@ -318,6 +430,7 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           current_mood: ''
         }
       ])
+      
       movies = Movie.create([
         {
           title: 'Your Name',
@@ -379,85 +492,6 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
             image3: 'isle-of-dogs3.jpeg',
             current_mood: ''
           }
-       
-      ])
-
-      movies = Movie.create([
-        {
-          title: 'Dark Shadows',
-          director: 'Tim Burton',
-          cinematographer: 'Bruno Delbonnel',
-          genre: 'Fantasy, Horror',
-          duration: 103,
-          release_year: 2012,
-          description: "In 18th-century Maine, Barnabas Collins (Johnny Depp) presides over the town of Collinsport. A rich and powerful playboy, Barnabas seals his own doom when he breaks the heart of a witch named Angelique (Eva Green). Angelique turns Barnabas into a vampire and buries him alive. Two centuries later, Barnabas escapes from his tomb and finds 1972 Collinsport a very different place. His once-grand estate has fallen into ruin, and the dysfunctional remnants of his family have fared little better.",
-          starring: 'Johnny Depp, Michelle Pfeiffer, Bella Heathcote, Eva Green',
-          awards: 'BMI Film Music Award, Kids Choice Awards Favorite Movie Actor',
-          image1: 'dshadows1.jpg',
-          image2: 'dshadows1.jpg',
-          image3: 'dshadows1.jpg',
-          current_mood: ''
-        },
-        {
-          title: 'Edward Scissorhands',
-          director: 'Tim Burton',
-          cinematographer: 'Stefan Czapsky',
-          genre: 'Fantasy, Romance',
-          duration: 105,
-          release_year: 1990,
-          description: "A scientist (Vincent Price) builds an animated human being -- the gentle Edward (Johnny Depp). The scientist dies before he can finish assembling Edward, though, leaving the young man with a freakish appearance accentuated by the scissor blades he has instead of hands. Loving suburban saleswoman Peg (Dianne Wiest) discovers Edward and takes him home, where he falls for Peg's teen daughter (Winona Ryder). However, despite his kindness and artistic talent, Edward's hands make him an outcast.",
-          starring: ' Johnny Depp, Winona Ryder, Dianne Wiest',
-          awards: "BAFTA Film Award Best Production Design, Felix Best Original Score, Felix Best Art Direction, Felix Best Costume Design, Felix Best Makeup, Saturn Award Best Fantasy Film, Hugo Awards Best Dramatic Presentation, Sant Jordi Awards Best Foreign Film & Best Foreign Actress",
-          image1: 'edward1.jpg',
-          image2: 'edward2.jpg',
-          image3: 'edward3.jpg',
-          current_mood: ''
-        },
-        {
-          title: 'Romeo and Juliet',
-          director: 'Raz Luhrmann',
-          cinematographer: 'Donald McAlpine',
-          genre: 'Drama, Romance',
-          duration: 120,
-          release_year: 1996,
-          description: 'Baz Luhrmann helped adapt this classic Shakespearean romantic tragedy for the screen, updating the setting to a post-modern city named Verona Beach. In this version, the Capulets and the Montagues are two rival gangs. Juliet (Claire Danes) is attending a costume ball thrown by her parents. Her father Fulgencio Capulet (Paul Sorvino) has arranged her marriage to the boorish Paris (Paul Rudd) as part of a strategic investment plan. Romeo attends the masked ball and he and Juliet fall in love.',
-          starring: 'Leonardo DiCaprio, Claire Danes, Paul Rudd, John Leguizamo',
-          awards: "BAFTA Award for Best Original Score, Silver Bear for Best Actor, BAFTA Award for Best Direction, BAFTA Award for Best Adapted Screenplay, MTV Movie Award for Best Female Performance, BAFTA Award for Best Production Design, Satellite Award for Best Art Direction and Production Design, London Film Critics' Circle Award for Actress of the Year, Favorite Actor - Drama/Romance, Best Performance by a Young Actress in a Drama Film, Favorite Actress - Romance",
-          image1: 'romeo1.jpg',
-          image2: 'romeo2.jpg',
-          image3: 'romeo3.jpg',
-          current_mood: ''
-        },
-        {
-          title: 'American Psycho',
-          director: 'Marry Harron',
-          cinematographer: 'Andrzej Sekula',
-          genre: 'Comedy, Horror',
-          duration: 101,
-          release_year: 2000,
-          description: "In New York City in 1987, a handsome, young urban professional, Patrick Bateman (Christian Bale), lives a second life as a gruesome serial killer by night. The cast is filled by the detective (Willem Dafoe), the fiance (Reese Witherspoon), the mistress (Samantha Mathis), the coworker (Jared Leto), and the secretary (Chloë Sevigny). This is a biting, wry comedy examining the elements that make a man a monster.",
-          starring: 'Christian Bale, Bret Easton Ellis, Jared Leto, Reese Witherspoon, Chloë Sevigny, Willem Dafoe',
-          awards: 'ACCA Best Actor in a Leading Role, Chlotrudis Award Best Adapted Screenplay & Best Actor, Fangoria Chainsaw Awards Best Wide-Release Film & Best Actor, Golden Train Award Best Actor, IHG Award Best Movie, National Board of Review Special Recognition.',
-          image1: 'psycho1.jpg',
-          image2: 'psycho2.jpg',
-          image3: 'psycho3.jpg',
-          current_mood: ''
-        },
-        {
-          title: 'Kill Bill Vol. 1',
-          director: 'Quentin Tarantino',
-          cinematographer: 'Robert Richardson',
-          genre: 'Action, Crime',
-          duration: 101,
-          release_year: 2003,
-          description: 'A former assassin, known simply as The Bride (Uma Thurman), wakes from a coma four years after her jealous ex-lover Bill (David Carradine) attempts to murder her on her wedding day. Fueled by an insatiable desire for revenge, she vows to get even with every person who contributed to the loss of her unborn child, her entire wedding party, and four years of her life. After devising a hit list, The Bride sets off on her quest, enduring unspeakable injury and unscrupulous enemies.',
-          starring: 'Uma Thurman, Lucy Liu, David Carradine',
-          awards: 'MTV Movie Award for Best Villain, MTV Movie Award for Best Fight, MTV Movie Award for Best Female Performance',
-          image1: 'killbill1.jpg',
-          image2: 'killbill2.jpg',
-          image3: 'killbill3.png',
-          current_mood: ''
-        }
       ])
 
       movies = Movie.create([
@@ -615,41 +649,6 @@ u2 = User.create!(full_name: "Tian Xu", username: "tian", password: "123tian", e
           current_mood: ''
         }
       ])
-
-      movies = Movie.create([
-        {
-          title: 'Fallen Angels',
-          director: 'Wong Kar-wai',
-          cinematographer: 'Christopher Doyle, Mark Lee Ping-bing, Chan Kwok-Hung',
-          genre: 'Drama, Romance',
-          duration: 95,
-          release_year: 1995,
-          description: "An assassin, his boss, an entrepreneur and two women cross paths in Hong Kong as their professional and love lives collide and influence each other, mostly without their knowledge.",
-          starring: 'Leon Lai, Takeshi Kaneshiro, Michelle Reis, Charlie Yeung',
-          awards: 'Hong Kong Film Awards Best Supporting Actress & Best Cinematography & Best Original Score, Golden Horse Awards Best Film Editing, Hong Kong Film Critics Society Awards Film of Merit, Golden Bauhinia Awards Best Supporting Actress & Best Cinematography.',
-          image1: 'fallenA1.jpg',
-          image2: 'fallenA2.jpg',
-          image3: 'fallenA3.png',
-          current_mood: ''
-        },
-        {
-          title: 'The French Dispatch',
-          director: 'Wes Anderson',
-          cinematographer: 'Robert Yeoman',
-          genre: 'Comedy, Romance',
-          duration: 108,
-          release_year: 2021,
-          description: 'A love letter to journalists set in an outpost of an American newspaper in a fictional 20th-century French city that brings to life a collection of stories published in "The French Dispatch."',
-          starring: ' Bill Murray, Timothée Chalamet, Owen Wilson, Tilda Swinton, Audrien Brody, Benicio del Toro, Léa Seydoux, Saoirse Ronan, Willem Dafoe, Kate Winslet',
-          awards: 'AFCA Award Best Ensemble, CFCA Award Best Art Direction/Production Design & Best Editing, CIC Award Best Supporting Actor & Best Ensemble Cast, DFCS Award Best Comedy Film & Best Ensemble, FFCC Award Best Original Screenplay, NCFCA Award Best Editing, NDFS Award Best Production Design, NTFCA Award Best Supporting Actor & Best Supporting Actress & Gary Murray Award (Best Ensemble), OFCC Award Best Ensemble Cast, OFCS Award Best Production Design, PCA Award Best Male Supporting Role, SEFCA Best Ensemble, SLFCA Award Best Production Design.',
-          image1: 'frenchdispatch1.png',
-          image2: 'frenchdispatch2.png',
-          image3: 'frenchdispatch3.jpg',
-          current_mood: ''
-        }
-      ])
-
-      
 
 
       reviews = Review.create([

@@ -3,13 +3,12 @@ import '../styles.css'
 import { Button, Form, Container, Row, Col } from 'react-bootstrap'
 
 
-function Signup({ setUser,user }) {
+function Signup({ setUser, user }) {
   const [fullname, setFullname] = useState("")
-  const [email,setEmail] = useState("") 
+  const [username, setUsername] = useState("") 
+  const [email, setEmail] = useState("") 
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,6 +19,7 @@ function Signup({ setUser,user }) {
       },
       body: JSON.stringify({
         full_name: fullname,
+        username,
         email,
         password,
         password_confirmation: passwordConfirmation,
@@ -33,8 +33,8 @@ function Signup({ setUser,user }) {
   }
 
   return (
-    <div id='form-font'>
-      <Container className="container">
+    <div id='form-div'>
+      <Container className="form-container">
         <Form id='signup-form' onSubmit={handleSubmit}>
           <Form.Label id='form-label'>Create an account</Form.Label>
           <br></br>
@@ -43,17 +43,28 @@ function Signup({ setUser,user }) {
                 <Form.Control 
                     type="text" 
                     id='fullname'
-                    placeholder="Full name" 
+                    placeholder="Enter full name" 
                     autoComplete='off'
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
                 />
             </Form.Group>
+            <Form.Label>Username</Form.Label>
+          <Form.Group className='mb-3'>
+                <Form.Control 
+                    type="text" 
+                    placeholder="Enter username" 
+                    id="username"
+                    autoComplete="off"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+          </Form.Group>
           <Form.Label>Email</Form.Label>
           <Form.Group className='mb-3'>
                 <Form.Control 
                     type="text" 
-                    placeholder="Email Address" 
+                    placeholder="Enter email Address" 
                     id="email"
                     autoComplete="off"
                     value={email}

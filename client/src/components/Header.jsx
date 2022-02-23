@@ -1,62 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import '../styles.css'
 import { Form, Button, Row, Col } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Header({ user, setUser,setMood }) {
+function Header({ user, setUser, setMood }) {
   let navigate = useNavigate();
 
-    function handleLogout() {
-      navigate("/")
-        fetch("/logout", { method: "DELETE" }).then((r) => {
-          if (r.ok) {
-            setUser(null);
-            setMood("")
-          
-          }
-        });
-      }
+  function handleLogout() {
+    navigate("/")
+      fetch("/logout", { method: "DELETE" }).then((r) => {
+        if (r.ok) {
+          setUser(null);
+          setMood("")
+        }
+      });
+  }
 
   return (
     <div className='header-container'>
       <div>
-         <Form>
+         {/* <Form>
             <Form.Check 
-                type="switch"
-                id="custom-switch"
-                label="Dark Mode"
+              type="switch"
+              id="custom-switch"
+              label="Dark Mode"
             />
-         </Form>
+         </Form> */}
          {user ? (
+           <>
+           <h4>Welcome, {user.username} !</h4>{'  '}
            <Button size='sm' variant='light' onClick={handleLogout}>
             Logout
            </Button>
+           </>
          ) : (
          <>
-          <Link to='/signup'>Sign up</Link>
+          <Link to='/signup' style={{ textDecoration: 'none', fontSize: 16 }}>Sign up</Link>
           <br></br>
-          <Link to="/login">Login</Link>
+          <Link to="/" style={{ textDecoration: 'none', fontSize: 16 }}>Login</Link>
          </>
         )}
       </div> 
     </div>
-
-   
-  //   <div>
-  //     <Link to="/">Home</Link>
-  //   </div>
-
-  //   <div>
-  //     {user ? (
-  //       <button onClick={handleLogoutClick}>Logout</button>
-  //     ) : (
-  //       <>
-  //         <Link to="/signup">Signup</Link>
-  //         <Link to="/login">Login</Link>
-  //       </>
-  //     )}
-  //   </div>
   )
 }
 

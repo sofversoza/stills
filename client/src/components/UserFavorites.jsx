@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Movie from './Movie/Movie'
-import images from '../images'
+import MovieCard from './Movies/MovieCard'
 import '../styles.css'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 function UserFavorite({user,movies}){
     const [props, setProps] = useState([])
@@ -16,43 +16,19 @@ function UserFavorite({user,movies}){
       .then(user => setFav(user.movies))
     },[])
 
-    const grid =  fav.map((movie) => {
+    const grid =  fav.map((item) => {
         return(
-        <div className="movie-grid" id={movie.id} >
-        <Row>
-        <Col> 
-           <img
-               src={images[`${movie.image1}`].default}
-               alt={movie.title}
-               id="stills"
-               height="175px"
-               width= "350px"
-               onClick= {()=>{handleClick(movie)}}
-           />
-         </Col>  
-          <Col>  
-            <img
-               src={images[`${movie.image2}`].default}
-               alt={movie.title}
-               id="stills"
-               height="175px"
-               width= "350px"
-               onClick= {()=>{handleClick(movie)}}
-            />
-           </Col>
-           <Col> 
-            <img
-               src={images[`${movie.image3}`].default}
-               alt={movie.title}
-               id="stills"
-               height="175px"
-               width= "350px"
-               onClick= {()=>{handleClick(movie)}}
-            />
-         </Col>   
-        </Row>
-        <Button onClick={()=>handleRemove(movie)}>Remove</Button>
-        
+          <div>
+          <MovieCard 
+              key={item.id}
+              props={item}
+              movies={movies}
+              user={user}
+              handleClick={handleClick}   
+          />
+          <Button onClick={handleClick} variant='warning' className='mt-1 mb-2'> 
+              Remove 
+          </Button>
         </div>
     )})
    
@@ -70,7 +46,6 @@ function UserFavorite({user,movies}){
     }
     
 
-    console.log(user.movies)
     return(
     <div>
       {toMovie?<Movie  key={props.id} props={props} user={user} movies={movies} handleClick={handleClick}/>:grid}

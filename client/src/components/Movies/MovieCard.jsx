@@ -1,5 +1,4 @@
-import React, {useEffect, useState}from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState }from 'react'
 import images from '../../images'
 import '../../styles.css'
 import { Row, Col } from 'react-bootstrap'
@@ -10,7 +9,7 @@ import Movie from '../Movie/Movie'
 function MovieCard({ props, user, movies}) {
  const [toMovie, setToMovie] = useState(false)
 
-  // let navigate = useNavigate()
+ 
  
   function handleClick(){
     // getProps(props)
@@ -27,41 +26,41 @@ function MovieCard({ props, user, movies}) {
       <Movie  key={props.id} props={props} user={user} movies={movies} handleClick={handleClick}/>
       </div>:
       <Row>
-      <Col> 
-       {/* <Link to={`/movies/${props.slug}`}> */}
+      <Col className='no-padding'> 
+      
          <img
              src={images[`${props.image1}`].default}
              alt={props.title}
-             id="stills"
-             height="175px"
-             width= "350px"
+             height='265px'
+             width='500px'
+             id='img-div'
              onClick= {()=>{handleClick(props)}}
          />
-        {/* </Link> */}
+      
        </Col>  
         <Col>  
-        {/* <Link to={`/movies/${props.slug}`}> */}
+       
           <img
              src={images[`${props.image2}`].default}
              alt={props.title}
-             id="stills"
-             height="175px"
-             width= "350px"
+             height='265px'
+                width='500px'
+                id='img-div'
              onClick= {()=>{handleClick(props)}}
           />
-         {/* </Link> */}
+      
          </Col>
          <Col> 
-         {/* <Link to={`/movies/${props.slug}`}> */}
+      
           <img
              src={images[`${props.image3}`].default}
              alt={props.title}
-             id="stills"
-             height="175px"
-             width= "350px"
+             height='265px'
+                width='500px'
+                id='img-div'
              onClick= {()=>{handleClick(props)}}
           />
-        {/* </Link> */}
+     
        </Col>   
       </Row>
       }
