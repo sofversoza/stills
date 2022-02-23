@@ -5,24 +5,30 @@ import '../../styles.css'
 
 
 
-function Movie({props,movies,user}) {
-  const [newReview, setNewReview] = useState("")
-  const [newRating, setNewRating] = useState(0)
-  const [added, setAdded] = useState(false)
-
-  const theMovie = movies.filter((movie)=> movie.id === props.id)
-  const rating = (theMovie[0].reviews.reduce((total,next)=> total + next.rating, 0)/theMovie[0].reviews.length).toFixed(1)
-  const review = theMovie[0].reviews.map((r)=>{
-    return(
-      <div>
-      <h6>{r.comment}</h6>
-      </div>
-    )
-  })
+function Movie({props,movies,user,handleClick}) {
   const userId = user.id
   const movieId = props.id
+  const [newReview, setNewReview]=useState("")
+  const [newRating, setNewRating]=useState(0)
+  const [added,setAdded]= useState(false)
+  
+  
+    const theMovie = movies.filter((movie)=> movie.id === props.id )[0]
+    const rating = (theMovie.reviews.reduce((total,next)=> total + next.rating, 0)/theMovie.reviews.length).toFixed(1)
+    const review = theMovie.reviews.map((r)=>{
+      return(
+        <div>
+          <h6>{r.comment}</h6>
+        </div>             
+     )
+})
 
- function handleClick(){
+  
+ 
+
+
+
+function handleFavorite(){
   fetch('/favorites',{
     method: "POST",
     headers: {
@@ -46,51 +52,54 @@ function Movie({props,movies,user}) {
 
   return (
     <div id='main-div-movie'>
-      <div className='mt-4 container-fluid'> 
-        <Row >
-        <Col className='no-padding'>
-        <img
-          src={images[`${theMovie[0].image1}`].default}
-          alt={theMovie[0].title}
-          height='265px'
-          width='510px'
-          id='img-div'
-        />
-        </Col>
-        <Col className='no-padding'>
-        <img
-          src={images[`${theMovie[0].image2}`].default}
-          alt={theMovie[0].title}
-          height='265px'
-          width='510px'
-          id='img-div'
-        />
-        </Col>
-        <Col className='no-padding'>
-        <img
-          src={images[`${theMovie[0].image3}`].default}
-          alt={theMovie[0].title}
-          height='265px'
-          width='510px'
-          id='img-div'
-        />
-        </Col>
-        </Row>
+      
+
+        <div className='mt-4 container-fluid' onClick={handleClick}> 
+         <Row >
+            <Col className='no-padding'>
+          <img
+            src={images[`${theMovie.image1}`].default}
+            alt={theMovie.title}
+            height='265px'
+            width='510px'
+            id='img-div'
+          />
+          </Col>
+          <Col className='no-padding'>
+          <img
+            src={images[`${theMovie.image2}`].default}
+            alt={theMovie.title}
+            height='265px'
+            width='510px'
+            id='img-div'
+          />
+          </Col>
+          <Col className='no-padding'>
+          <img
+            src={images[`${theMovie.image3}`].default}
+            alt={theMovie.title}
+            height='265px'
+            width='510px'
+            id='img-div'
+          />
+          </Col>
+         
+          </Row>
        </div> 
-  
-        <Container id='container-movie-info'>
-        <div id='single-movie-info'>
-          <h1 className='mt-2 mb-2'>{theMovie[0].title}</h1>
-          <h3 className='mb-2'>{`(${theMovie[0].release_year})`}</h3>
-          <h4 className='mt-4 mb-4'>{theMovie[0].description}</h4>  
-          <h5>Director: {theMovie[0].director}</h5>
-          <h5>Cinematographer: {theMovie[0].cinematographer}</h5>
-          <h5>Genre: {theMovie[0].genre}</h5>
-          <h5>Duration: {theMovie[0].duration} mins</h5>
+         
+         <Container id='container-movie-info'>
+         <div id='single-movie-info'>
+          <h1 className='mt-2 mb-2'>{theMovie.title}</h1>
+          <h3 className='mb-2'>{`(${theMovie.release_year})`}</h3>
+          <h4 className='mt-4 mb-4'>{theMovie.description}</h4>  
+          <h5>Director: {theMovie.director}</h5>
+          <h5>Cinematographer: {theMovie.cinematographer}</h5>
+          <h5>Genre: {theMovie.genre}</h5>
+          <h5>Duration: {theMovie.duration} mins</h5>
           <h5>Rating: {rating}</h5> 
-          <h6 className='mb-2'>Starring: {theMovie[0].starring}</h6>
-          <h6>Awards: {theMovie[0].awards}</h6>
-          <Button onClick={handleClick} className='mb-4 mt-2' variant='light'>
+          <h6 className='mb-2'>Starring: {theMovie.starring}</h6>
+          <h6>Awards: {theMovie.awards}</h6>
+          <Button onClick={handleFavorite} className='mb-4 mt-2' variant='light'>
           {added ? "Added to favorites" : "Add to favorites"}
           </Button>
           
@@ -119,6 +128,8 @@ function Movie({props,movies,user}) {
           {review}
       </div>
       </Container> 
+   
+        
     </div>
   )
 }

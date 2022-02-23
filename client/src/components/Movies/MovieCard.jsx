@@ -1,52 +1,70 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState }from 'react'
 import images from '../../images'
 import '../../styles.css'
 import { Row, Col } from 'react-bootstrap'
+import Movie from '../Movie/Movie'
 
 
-function MovieCard({ props, getProps }) {
-  let navigate = useNavigate()
-  
-  function handleClick(props){
-    getProps(props)
-    navigate(`/movies/${props.slug}`)
-  }
+
+function MovieCard({ props, user, movies}) {
+ const [toMovie, setToMovie] = useState(false)
+
  
+ 
+  function handleClick(){
+    // getProps(props)
+    setToMovie(!toMovie)
+    // navigate(`/movies/${props.slug}`)
+  }
+  
+
+
   return (
-    <div className='mt-4 container-fluid'>
-         <Row>
-         <Col className='no-padding'> 
-            <img
-                src={images[`${props.image1}`].default}
-                alt={props.title}
-                height='265px'
+    <div className="movie-grid"  >
+      {toMovie?
+      <div>
+      <Movie  key={props.id} props={props} user={user} movies={movies} handleClick={handleClick}/>
+      </div>:
+      <Row>
+      <Col className='no-padding'> 
+      
+         <img
+             src={images[`${props.image1}`].default}
+             alt={props.title}
+             height='265px'
+             width='500px'
+             id='img-div'
+             onClick= {()=>{handleClick(props)}}
+         />
+      
+       </Col>  
+        <Col>  
+       
+          <img
+             src={images[`${props.image2}`].default}
+             alt={props.title}
+             height='265px'
                 width='500px'
                 id='img-div'
-                onClick= {()=>{handleClick(props)}}
-            />
-          </Col>  
-           <Col className='no-padding'>  
-             <img
-                src={images[`${props.image2}`].default}
-                alt={props.title}
-                height='265px'
-                width='510px'
+             onClick= {()=>{handleClick(props)}}
+          />
+      
+         </Col>
+         <Col> 
+      
+          <img
+             src={images[`${props.image3}`].default}
+             alt={props.title}
+             height='265px'
+                width='500px'
                 id='img-div'
-                onClick= {()=>{handleClick(props)}}
-             />
-            </Col>
-            <Col className='no-padding'> 
-             <img
-                src={images[`${props.image3}`].default}
-                alt={props.title}
-                height='265px'
-                width='510px'
-                id='img-div'
-                onClick= {()=>{handleClick(props)}}
-             />
-          </Col>   
-         </Row>
+             onClick= {()=>{handleClick(props)}}
+          />
+     
+       </Col>   
+      </Row>
+      }
+        
     </div>
   )
 }
